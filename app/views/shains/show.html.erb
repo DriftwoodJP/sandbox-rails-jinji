@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('activerecord.attributes.shain.name') %>:</strong>
+  <%= @shain.name %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.shain.type') %>:</strong>
+  <%= @shain.yakushoku %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.shain.kihonkyu') %>:</strong>
+  <%= @shain.kihonkyu %>
+</p>
+
+<p>
+  <strong><%= t('.kyuyo') %>:</strong>
+  <%= @shain.salary %>
+</p>
+
+<p>
+  <%= link_to t('.standup'), standup_shain_path %>
+</p>
+
+<%= link_to t('.edit'), edit_shain_path(@shain) %> |
+<%= link_to t('.back'), shains_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.shain.name') %></th>
+      <th><%= t('activerecord.attributes.shain.type') %></th>
+      <th><%= t('activerecord.attributes.shain.kihonkyu') %></th>
+      <th><%= t('.kyuyo') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shains.each do |shain| %>
+      <tr>
+        <td><%= shain.name %></td>
+        <td><%= shain.yakushoku %></td>
+        <td><%= shain.kihonkyu %></td>
+        <td><%= shain.salary %></td>
+        <td><%= link_to t('.show'), shain.becomes(Shain) %></td>
+        <td><%= link_to t('.edit'), edit_shain_path(shain) %></td>
+        <td><%= link_to t('.destroy'), shain.becomes(Shain), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('.new'), new_shain_path %>

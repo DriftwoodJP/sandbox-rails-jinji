@@ -1,0 +1,6 @@
+<h1><%= t('.title') %></h1>
+
+<%= render 'form', shain: @shain %>
+
+<%= link_to t('.show'), @shain.becomes(Shain) %> |
+<%= link_to t('.back'), shains_path %>
