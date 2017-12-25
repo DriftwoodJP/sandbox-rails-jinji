@@ -1,0 +1,32 @@
+<%= form_with(model: shain.becomes(Shain), local: true) do |form| %>
+  <% if shain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shain.errors.count, "error") %> prohibited this shain from being saved:</h2>
+
+      <ul>
+      <% shain.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :shain_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.select :type, [[I18n.t('shains.form.tanto'), 'Tanto'], [I18n.t('shains.form.shunin'), 'Shunin'], [I18n.t('shains.form.bucho'), 'Bucho']], {}, { id: :shain_type } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kihonkyu %>
+    <%= form.number_field :kihonkyu, id: :shain_kihonkyu %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
